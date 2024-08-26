@@ -1,0 +1,21 @@
+x1 = 9999999000000000  x2 = 10000000000000000  delta = 134217728
+PLAIN: Time in sec: 97.141  # of primes   = 27147369  # of divisors = 3883730055
+FACT: Time in sec: 63.0558  # of primes   = 27147369  # of divisors = 3883730055
+CP: Time in sec: 99.9014  # of primes   = 27147369  # of divisors = 3883730055
+ALL: Time in sec: 63.8821  # of primes   = 27147369  # of divisors = 3883730055
+x1 = 9999999000000000  x2 = 10000000000000000  delta = 67108864
+PLAIN: Time in sec: 96.9099  # of primes   = 27147369  # of divisors = 3883730055
+FACT: Time in sec: 63.7373  # of primes   = 27147369  # of divisors = 3883730055
+CP: Time in sec: 98.1572  # of primes   = 27147369  # of divisors = 3883730055
+ALL: Time in sec: 64.9607  # of primes   = 27147369  # of divisors = 3883730055
+x1 = 9999999000000000  x2 = 10000000000000000  delta = 33554432
+PLAIN: Time in sec: 96.7536  # of primes   = 27147369  # of divisors = 3883730055
+FACT: Time in sec: 66.1893  # of primes   = 27147369  # of divisors = 3883730055
+CP: Time in sec: 99.2532  # of primes   = 27147369  # of divisors = 3883730055
+ALL: Time in sec: 67.4327  # of primes   = 27147369  # of divisors = 3883730055
+x1 = 9999999000000000  x2 = 10000000000000000  delta = 16777216
+PLAIN: Time in sec: 98.3225  # of primes   = 27147369  # of divisors = 3883730055
+FACT: Time in sec: 70.1273  # of primes   = 27147369  # of divisors = 3883730055
+CP: Time in sec: 99.8588  # of primes   = 27147369  # of divisors = 3883730055
+ALL: Time in sec: 70.785  # of primes   = 27147369  # of divisors = 3883730055
+x1 = 9999999000000000  x2 = 10000000000000000  delta = 1682083464
