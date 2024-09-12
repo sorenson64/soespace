@@ -12,6 +12,8 @@
 #include"stack.h"
 #include"primelist.h"
 
+bool docounts=true;
+
 void soe_seg_plain(uint64_t x1, uint64_t x2, 
                    const vector<uint32_t> & smallprimes,
   /* outputs */    uint64_t & primecount, uint64_t & divisorcount)
@@ -31,6 +33,7 @@ void soe_seg_plain(uint64_t x1, uint64_t x2,
   }
 
   // count things
+  if(docounts){
   for(uint64_t n=x1; n<x2; n++)
   {
     int xpos=n-x1;
@@ -49,6 +52,7 @@ void soe_seg_plain(uint64_t x1, uint64_t x2,
        }
        if(n0>1) divisorcount++;
     }
+  }
   }
 }
 
@@ -78,15 +82,18 @@ void soe_seg_fact(uint64_t x1, uint64_t x2,
   for(int i=0; i<delta; i++) x[i].makeempty();
 
   // main loop to write down primes
+  int bitlen=0;
   for(int j=1; j<smallprimes.size(); j++)  // skip 2, so j=1 to start
   {
     uint32_t p=smallprimes[j];
-    int bitlen=Factorlist2::bitlength(p);
+    //int bitlen=Factorlist2::bitlength(p);
+    while((1ul<<bitlen)<p) bitlen++;
     uint64_t q0=x1+(p-(x1%p))%p;
     for(uint64_t q=q0; q<x2; q+=p) x[q-x1].push(p,bitlen);
   }
 
   // count things
+  if(docounts){
   for(uint64_t n=x1; n<x2; n++)
   {
 
@@ -116,6 +123,7 @@ void soe_seg_fact(uint64_t x1, uint64_t x2,
        if(n0>1) { divisorcount++;  } // cout << n0; }
 //cout << endl;
     }
+  }
   }
 }
 
@@ -160,6 +168,7 @@ void soe_seg_cp(uint64_t x1, uint64_t x2,
   }
 
   // count things
+  if(docounts){
   for(uint64_t n=x1; n<x2; n++)
   {
     int xpos=n-x1;
@@ -178,6 +187,7 @@ void soe_seg_cp(uint64_t x1, uint64_t x2,
        }
        if(n0>1) divisorcount++;
     }
+  }
   }
 }
 
@@ -215,15 +225,18 @@ void soe_seg_all(uint64_t x1, uint64_t x2,
   // 3's bitlength is 2
   for(uint64_t q=q0; q<x2; q+=p) x[q-x1].push(3,2);
   // p=5,7,11, etc.
+  int bitlen=0;
   for(int j=0; j<smallprimes.hglen; j++)
   {
     p=p+smallprimes.gap(j);
-    int bitlen=Factorlist2::bitlength(p);
+    //int bitlen=Factorlist2::bitlength(p);
+    while((1ul<<bitlen)<p) bitlen++;
     uint64_t q0=x1+(p-(x1%p))%p;
     for(uint64_t q=q0; q<x2; q+=p) x[q-x1].push(p,bitlen);
   }
 
   // count things
+  if(docounts){
   for(uint64_t n=x1; n<x2; n++)
   {
 
@@ -254,7 +267,7 @@ void soe_seg_all(uint64_t x1, uint64_t x2,
 //cout << endl;
     }
   }
-
+  }
 }
 
 void soe_all(uint64_t x1, uint64_t x2, uint32_t delta,
